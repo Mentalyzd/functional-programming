@@ -1,18 +1,18 @@
-let object;
+/*let object;
 
 let httpRequest = new XMLHttpRequest(); // asynchronous request
-httpRequest.open("GET", "dataset.json", true);
+httpRequest.open("GET", "https://raw.githubusercontent.com/Mentalyzd/functional-programming/main/week1/dataset.json", true);
 httpRequest.send();
 httpRequest.addEventListener("readystatechange", function() {
     if (this.readyState === this.DONE) {
-      	// when the request has completed
         object = JSON.parse(this.response);
+        console.log(object)
     }
-});
+});*/
 
-/*fetch("dataset.json")
+fetch("https://raw.githubusercontent.com/Mentalyzd/functional-programming/main/week1/dataset.json")
     .then(Response => Response.json())
     .then(data => {
         console.log(data);
   		// or whatever you wanna do with the data
-});*/
+});
