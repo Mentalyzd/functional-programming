@@ -10,9 +10,10 @@ httpRequest.addEventListener("readystatechange", function() {
     }
 });*/
 
-fetch("https://raw.githubusercontent.com/Mentalyzd/functional-programming/main/week1/dataset.json")
+fetch("https://raw.githubusercontent.com/Mentalyzd/functional-programming/main/week1/dataset2.json")
     .then(Response => Response.json())
     .then(data => {
+        data = data[0]['Als je later een auto zou kopen, van welk merk zou deze dan zijn?']
         console.log(data);
   		// or whatever you wanna do with the data
 });
