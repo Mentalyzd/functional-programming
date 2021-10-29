@@ -1,10 +1,12 @@
 const express = require('express')
 const request = require('request');
 
-let dataset = "https://raw.githubusercontent.com/Mentalyzd/functional-programming/main/week1/dataset2.json"
+let dataset = "https://raw.githubusercontent.com/Mentalyzd/functional-programming/main/week_1_2/dataset.json"
 
 const app = express()
-const port = 3002;
+const port = 2999;
+
+app.use(express.static('public', {}))
 
 app.set('view engine','ejs')
 
@@ -57,7 +59,7 @@ const sortOnQuestion = (object, questObj) => {
 
 const toStringAndLowerCase = (string) => {
     //Maak string lowercase of wanneer het geen string is, string maken
-    if (typeof string === 'string' || string instanceof String) return string.toLowerCase()
+    if (typeof string === 'string' || string instanceof String) return string.toLowerCase().replace(',', '-').replace(', ', '-').replace('- ', '-')
     else return string.toString()
 }
 
