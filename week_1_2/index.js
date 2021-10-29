@@ -59,7 +59,7 @@ const sortOnQuestion = (object, questObj) => {
 
 const toStringAndLowerCase = (string) => {
     //Maak string lowercase of wanneer het geen string is, string maken
-    if (typeof string === 'string' || string instanceof String) return string.toLowerCase().replace(',', '-').replace(', ', '-').replace('- ', '-')
+    if (typeof string === 'string' || string instanceof String) return string.toLowerCase().replace(' ,', '-').replace(', ', '-')
     else return string.toString()
 }
 
