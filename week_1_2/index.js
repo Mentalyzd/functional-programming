@@ -27,6 +27,7 @@ app.get('/', async (req, res) => {
         return [array[1], sortedAnswers]
     })
     .then((array) => {
+        //Tel antwoorden die hetzelfde zijn
         let countedAnswers = countAnswers(array[0], array[1])
         return [array[0], array[1], countedAnswers]
     })
@@ -37,7 +38,9 @@ app.get('/', async (req, res) => {
 
 const getQuestions = (resp) => {
     let uniqQuest = []
+    //Voeg alle antwoorden in een object
     for (var i=0; i < resp.length; i++) uniqQuest = uniqQuest.concat(Object.keys(resp[i]))
+    //Voeg alle duplicates samen
     uniqQuest = [...new Set(uniqQuest)]
     return uniqQuest
 }
@@ -45,13 +48,16 @@ const getQuestions = (resp) => {
 const sortOnQuestion = (object, questObj) => {
     let sortedAnswers = {}
     for(var j=0; j<questObj.length; j++) {
+        //Maak van elke vraag een categorie
         sortedAnswers[questObj[j]] = []
+        //Ga alle antwoorden langs en link aan categorie
         for (var i=0; i < object.length; i++) sortedAnswers[questObj[j]].push(toStringAndLowerCase(object[i][questObj[j]]))
     }
     return sortedAnswers
 }
 
 const toStringAndLowerCase = (string) => {
+    //Maak string lowercase of wanneer het geen string is, string maken
     if (typeof string === 'string' || string instanceof String) return string.toLowerCase()
     else return string.toString()
 }
@@ -70,7 +76,8 @@ const countAnswers = (questObj, sortedAnswers) => {
 }
 
 const getOccurrence = (array, value) => {
-    var count = 0
+    let count = 0
+    //Ga array langs en check of values gelijk zijn
     array.forEach((v) => (v === value && count++))
     return count.toString()
 }
