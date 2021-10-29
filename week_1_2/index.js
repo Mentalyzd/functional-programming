@@ -39,7 +39,7 @@ app.get('/', async (req, res) => {
 const getQuestions = (resp) => {
     let uniqQuest = []
     //Voeg alle antwoorden in een object
-    for (var i=0; i < resp.length; i++) uniqQuest = uniqQuest.concat(Object.keys(resp[i]))
+    for (let i=0; i < resp.length; i++) uniqQuest = uniqQuest.concat(Object.keys(resp[i]))
     //Voeg alle duplicates samen
     uniqQuest = [...new Set(uniqQuest)]
     return uniqQuest
@@ -47,11 +47,11 @@ const getQuestions = (resp) => {
 
 const sortOnQuestion = (object, questObj) => {
     let sortedAnswers = {}
-    for(var j=0; j<questObj.length; j++) {
+    for(let j=0; j<questObj.length; j++) {
         //Maak van elke vraag een categorie
         sortedAnswers[questObj[j]] = []
         //Ga alle antwoorden langs en link aan categorie
-        for (var i=0; i < object.length; i++) sortedAnswers[questObj[j]].push(toStringAndLowerCase(object[i][questObj[j]]))
+        for (let i=0; i < object.length; i++) sortedAnswers[questObj[j]].push(toStringAndLowerCase(object[i][questObj[j]]))
     }
     return sortedAnswers
 }
@@ -64,12 +64,12 @@ const toStringAndLowerCase = (string) => {
 
 const countAnswers = (questObj, sortedAnswers) => {
     let countedAnswers = {}
-    for(var j=0; j<questObj.length; j++) {
+    for(let j=0; j<questObj.length; j++) {
         countedAnswers[questObj[j]] = {}
         //Maar array van unieke antwoorden
         let uniqArray = [...new Set(sortedAnswers[questObj[j]])]
         //link vraag aan uniek antwoord
-        for (var i = 0; i < uniqArray.length; i++) countedAnswers[questObj[j]][uniqArray[i]] = getOccurrence(sortedAnswers[questObj[j]], uniqArray[i])
+        for (let i = 0; i < uniqArray.length; i++) countedAnswers[questObj[j]][uniqArray[i]] = getOccurrence(sortedAnswers[questObj[j]], uniqArray[i])
 
     }
     return countedAnswers
