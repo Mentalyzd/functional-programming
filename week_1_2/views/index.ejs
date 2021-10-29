@@ -3,22 +3,30 @@
   <head>
     <meta charset="utf-8">
     <title>Functional Programming</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-  <body>
+  <body style="font-family: 'Roboto', sans-serif;">
     <main>
         <h1>Functional Programming</h1>
 
         <% for(var j=0; j<uniqQuest.length; j++) { %>
-            <h3><%= uniqQuest[j] %></h3>
+            <div style="background: #f1f1f1; padding: 1em; box-sizing: border-box; margin-bottom: 10em; border-radius: 0.25em; width: 100%;">
+          <h3><%= uniqQuest[j] %></h3>
             <h4>Alle antwoorden:</h4>
-            <p><%= sortedAnswers[uniqQuest[j]] %></p>
+            <p style="max-width: 40em; word-wrap:break-word;"><%= sortedAnswers[uniqQuest[j]] %></p>
             <h4>Hoevaak is 1 antwoord gegeven:</h4>
+            <div style="display: flex; flex-wrap: wrap; flex-direction: row; align-items: flex-end; height: auto; background: #fff; padding: 1em; border-radius: 0.5em;">
             <% for(var i=0; i<Object.entries(countedAnswers[uniqQuest[j]]).length; i++) { %>
-                <p><%= Object.entries(countedAnswers[uniqQuest[j]])[i].reverse().toString().replace(",", " antwoorde: ") %></p>
-            <% } %>
-            <br>
-            <br>
+                <%# Object.entries(countedAnswers[uniqQuest[j]])[i].reverse().toString().replace(",", " antwoorde: ") %>
+              
+                <% var array2 = Object.entries(countedAnswers[uniqQuest[j]])[i].toString().split(",") %>
+                <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: center; border-radius: 0.5em; background: #33CEFF; min-width: 5em; width: auto; height: <%= array2[1] %>em; margin: 0.25em; padding: 0.25em;"><p style="font-weight: 800; text-decoration: underline;"><%= array2[1] %></p><p><% if(array2[0].length > 10) { %><%=array2[0].substring(0, 10) + '...'%> <%} else { %> <%= array2[0] %> <% } %></p></div>
+              <% } %>
+            </div>
+          </div>
         <% } %>
 
     </main>

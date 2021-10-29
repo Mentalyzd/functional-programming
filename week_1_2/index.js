@@ -4,7 +4,7 @@ const request = require('request');
 let dataset = "https://raw.githubusercontent.com/Mentalyzd/functional-programming/main/week1/dataset2.json"
 
 const app = express()
-const port = 3000;
+const port = 3002;
 
 app.set('view engine','ejs')
 
