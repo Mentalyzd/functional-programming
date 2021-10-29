@@ -1,11 +1,10 @@
 const express = require('express')
 const request = require('request');
-const { createLogger, transports, format} = require('winston')
 
 let dataset = "https://raw.githubusercontent.com/Mentalyzd/functional-programming/main/week1/dataset2.json"
 
 const app = express()
-const port = 3001;
+const port = 3000;
 
 app.set('view engine','ejs')
 
@@ -70,7 +69,6 @@ const countAnswers = (questObj, sortedAnswers) => {
         let uniqArray = [...new Set(sortedAnswers[questObj[j]])]
         //link vraag aan uniek antwoord
         for (let i = 0; i < uniqArray.length; i++) countedAnswers[questObj[j]][uniqArray[i]] = getOccurrence(sortedAnswers[questObj[j]], uniqArray[i])
-
     }
     return countedAnswers
 }
@@ -82,12 +80,6 @@ const getOccurrence = (array, value) => {
     return count.toString()
 }
 
-const logger = createLogger({
-    format: format.printf((info) => {return `[${info.level.toUpperCase()}] - ${info.message}`}),
-    level: 'debug',
-    transports:[new transports.Console()]
-})
-
 app.listen(port, () => {
-    logger.info('Server running on port ' + port)
+    console.log('Server running on port ' + port)
 })
