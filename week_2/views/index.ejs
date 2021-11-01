@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Functional Programming</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <main>
+        <h1>Functional Programming</h1>
+        <p>
+            <% if (typeof error == 'string' && error) { %>
+                <%= error %>
+            <% } %>
+        </p>
+        <form>
+            <label for="symbol">Symbol</label>
+            <input type="text" name="symbol" id="symbol" value="<% if (typeof symbol == 'string' && symbol) { %><%= symbol %><% } %>" required>
+            <label for="pare">Pare with</label>
+            <input type="text" name="pare" id="pare" value="<% if (typeof pare == 'string' && pare) { %><%= pare %><% } %>" required>
+            <input type="submit">
+        </form>
+
+        <div>
+            <% if (typeof dataset2 == 'object' && dataset2) { %>
+                <% for(var i=0; i<dataset1.length; i++) { %>
+                    <%= Object.values(dataset1[i]) %>
+                <% } %>
+            <% } %>
+        </div>
+    </main>
+  </body>
+</html>
