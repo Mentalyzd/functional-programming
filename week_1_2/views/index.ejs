@@ -19,18 +19,16 @@
               <p class="allQuests"><%= sortedAnswers[uniqQuest[j]] %></p>
               <h4>Hoevaak is 1 antwoord gegeven:</h4>
               <div class="grafCont">
-                <% var count = 0 %>
                 <% for(var i=0; i<Object.entries(countedAnswers[uniqQuest[j]]).length; i++) {
-                  var array2 = Object.entries(countedAnswers[uniqQuest[j]])[i].toString().split(",")
-                  count = count + parseInt(array2[1]) %>
+                  var array2 = Object.entries(countedAnswers[uniqQuest[j]])[i].toString().split(",") %>
                   <div class="grafItemCont">
-                    <div class="grafItem" style="height: <%= array2[1] %>em;">
+                    <div class="grafItem" style="height: <%= 100 / Object.entries(countedAnswers[uniqQuest[j]]).length * array2[1] %>px;">
                       <p class="answerCount"><%= array2[1] %></p>
                       <p><% if(array2[0].length > 10) { %><%=array2[0].substring(0, 10) + '...'%> <%} else { %> <%= array2[0] %> <% } %></p>
-                    </div>
+                      </div>
                   </div>
                 <% } %>
-                <%= count %>
+                
               </div>
           </div>
         <% } %>
