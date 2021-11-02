@@ -12,17 +12,17 @@ app.use(express.static('public', {}))
 app.set('view engine','ejs')
 
 app.get('/', async (req, res) => {
-    if (req.query.symbol == null && req.query.pare == null) {
+    if (req.query.symbol == null && req.query.pair == null) {
         res.render('index.ejs')
-    }else{
-        let market = processSymbols(req.query.symbol, req.query.pare)
+    } else {
+        let market = processSymbols(req.query.symbol, req.query.pair)
         let wazirRes = await fetchApiDataset(datasetWazir, marketUndash(market))
         let kucoinRes = await fetchApiDataset(datasetKucoin, marketCaps(market))
-        res.render('index.ejs', { dataset1: wazirRes, dataset2: kucoinRes, symbol: req.query.symbol, pare: req.query.pare })
+        res.render('index.ejs', { dataset1: wazirRes, dataset2: kucoinRes, symbol: req.query.symbol, pair: req.query.pair })
     }
 })
 
-const processSymbols = (symbol, pare) => {return symbol + '-' + pare}
+const processSymbols = (symbol, pair) => {return symbol + '-' + pair}
 
 const marketUndash = (market) => {return market.toLowerCase().replace("-", "")}
 

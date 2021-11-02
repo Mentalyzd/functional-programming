@@ -8,13 +8,35 @@ body{
     margin: 2em;
 }
 
-.chartBarWrap{
+.coinWrap{
     margin-top: 1em;
     width: max-content;
-    padding: 4em 1em 1em 1em;
+    padding: 1em;
     box-sizing: border-box;
     border-radius: 0.5em;
     background: #f1f1f1;
+}
+
+.coinCont{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.chartBarWrap{
+    margin-top: 1em;
+    width: max-content;
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: 0.5em;
+    background: #f1f1f1;
+}
+
+.chartBarWrap h2{
+    margin: 0 0 4em 0;
+    padding: 0 0 0.5em 0;
+    border-bottom: 1px solid #ccc;
 }
 
 .chartBarCont{
@@ -33,6 +55,20 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.marginSmall{
+    margin-bottom: 0.7em;
+}
+
+.poweredBy{
+    font-size: 0.7em;
+    border-top: 1px solid #ccc;
+    padding-top: 1em;
+}
+
+.poweredBy p{
+    margin: 0;
 }
 
 .chartPrices p {

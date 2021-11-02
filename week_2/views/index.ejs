@@ -1,96 +1,166 @@
+<%
+  const getValues = (obj, key)=> {
+    let array = []
+    for(var i=obj.length-1; i>=0; i--) {
+      array.push(obj[i][key])
+    }
+    return array
+  }
+
+  const calcPercentage = (maxPrice, minPrice, roof, cutOff, multi) => {
+    let priceCutOff = dataset1[i]['price'] - (minPrice * cutOff)
+    let pricePerc = priceCutOff / (maxPrice * roof) * 100
+    return pricePerc * multi
+  }
+
+%>
+
+
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Functional Programming</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
-    <main>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>Functional Programming</title>
+      <link rel="stylesheet" href="css/index.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap"
+        rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+      <main>
         <h1>Functional Programming week 2</h1>
 
         <p>
-            <% if (typeof error == 'string' && error) { %>
-                <%= error %>
-            <% } %>
+          <% if (typeof error=='string' && error) { %>
+            <%= error %>
+          <% } %>
         </p>
 
         <form>
-            <label for="symbol">Symbol</label>
-            <input type="text" name="symbol" id="symbol" value="<% if (typeof symbol == 'string' && symbol) { %><%= symbol %><% } %>" required>
-            <label for="pare">Pare with</label>
-            <input type="text" name="pare" id="pare" value="<% if (typeof pare == 'string' && pare) { %><%= pare %><% } %>" required>
-            <input type="submit">
+          <label for="symbol">Symbol</label>
+          <input type="text" name="symbol" id="symbol"
+            value="<% if (typeof symbol == 'string' && symbol) { %><%= symbol %><% } %>" required>
+          <label for="pair">pair with</label>
+          <input type="text" name="pair" id="pair"
+            value="<% if (typeof pair == 'string' && pair) { %><%= pair %><% } %>" required>
+          <input type="submit">
         </form>
 
-        
         <div>
-            <div>
+          <div class="coinWrap">
 
-                <% if (typeof dataset2 == 'object' && dataset2) { %>
+            <% if (typeof dataset2=='object' && dataset2) { %>
 
-                    <%= Object.values(dataset2['data']) %>
+              <div class="coinCont">
+                <div><h4>Buy</h4><p><%= dataset2['data']['buy'] %></p></div>
+                <div><h4>Sell</h4><p><%= dataset2['data']['sell'] %></p></div>
+                <div>
+                  <h4>Change Rate</h4>
+                  <p><%= dataset2['data']['changeRate'] %></p>
+                </div>
+                <div>
+                  <h4>Change Price</h4>
+                  <p><%= dataset2['data']['changePrice'] %></p>
+                </div>
+                <div>
+                  <h4>High</h4>
+                  <p><%= dataset2['data']['high'] %></p>
+                </div>
+                <div>
+                  <h4>Low</h4>
+                  <p><%= dataset2['data']['low'] %></p>
+                </div>
+                <div>
+                  <h4>Vol</h4>
+                  <p><%= dataset2['data']['vol'] %></p>
+                </div>
+                <div>
+                  <h4>Vol Value</h4>
+                  <p><%= dataset2['data']['volValue'] %></p>
+                </div>
+                <div>
+                  <h4>Last</h4>
+                  <p><%= dataset2['data']['last'] %></p>
+                </div>
+                <div>
+                  <h4>Average Price</h4>
+                  <p><%= dataset2['data']['averagePrice'] %></p>
+                </div>
+              </div>
 
-                    <%# for(var i=0; i<dataset2.length; i++) { %>
-                    <%# } %>
-                <% } %>
+              <% } %>
 
-            </div>
-            <h2>Live chart: <% if (typeof symbol == 'string' && symbol) { %><%= symbol %><% } %>-<% if (typeof pare == 'string' && pare) { %><%= pare %><% } %></h2>
-            <div class="chartBarWrap">
-                <% if (typeof dataset1 == 'object' && dataset1) { %>
+                <div class="poweredBy">
+                  <p>Powered by: <a href="https://kucoin.com/" target="_blank">Kucoin</a>, raw api: <a
+                      href="https://api.kucoin.com/api/v1/market/stats?symbol=BTC-USDT">Kucoin</a></p>
+                </div>
+          </div>
 
-                        <div class="chartBarCont">
-
-                        <%
-                        
-                        let prices = []
-                        let time = []
-                        
-                        for(var i=dataset1.length-1; i>=0; i--) { 
-                            prices.push(dataset1[i]['price'])
-                            time.push(dataset1[i]['created_at'])
-                        } 
-                        
-                        let maxPrice = Math.max(...prices)
-                        let minPrice = Math.min(...prices)
-                        let maxPricePerc = maxPrice * 1.1
-                        let minPricePerc = minPrice * 0.996
-                        
-                        %>
-
-                        <%
-                        for(var i=dataset1.length-1; i>=0; i--) { 
-                            let priceCutOff = dataset1[i]['price'] - minPricePerc
-                            let pricePerc = priceCutOff / maxPricePerc * 100
-                        %>
-                            
-                            <div class="chartBar" style="height: <%= pricePerc * 10 %>em; <% if ( dataset1[i]['price'] == maxPrice) {%><%= 'background: #00F346;' %><%}%> <% if ( dataset1[i]['price'] == minPrice) {%><%= 'background: #FF4242;' %><%}%> ">
-
-                                <%# Object.values(dataset1[i])['price'] %>
-                                <div class="chartBarInfo">
-                                    <p><%= '$ ' + dataset1[i]['price'] %></p>
-                                    <p><%= 'Vol: ' + dataset1[i]['volume'] %></p>
-                                    <p><%= dataset1[i]['created_at'].slice(11, -1) %></p>
-                                </div>
-                            </div>
+          <div class="chartBarWrap">
+            <h2>Live chart: <% if (typeof symbol=='string' && symbol) { %>
+                <%= symbol %>
+                  <% } %>-<% if (typeof pair=='string' && pair) { %>
+                      <%= pair %>
                         <% } %>
+            </h2>
+            <% if (typeof dataset1=='object' && dataset1) { %>
+
+              <div class="chartBarCont">
+
+                <% let prices=getValues(dataset1, 'price' )
+                let time=getValues(dataset1, 'created_at' )
+                let maxPrice=Math.max(...prices) 
+                let minPrice=Math.min(...prices) 
+                for(var i=dataset1.length-1; i>=0; i--) {
+                  let pricePerc2 = calcPercentage(maxPrice, minPrice, 1.5, 0.99, 10)
+                  %>
+
+                  <div class="chartBar"
+                    style="height: <%= pricePerc2 %>em; <% if ( dataset1[i]['price'] == maxPrice) {%><%= 'background: #00F346;' %><%}%> <% if ( dataset1[i]['price'] == minPrice) {%><%= 'background: #FF4242;' %><%}%> ">
+                    <div class="chartBarInfo">
+                      <p>
+                        <%= '$ ' + dataset1[i]['price'] %>
+                      </p>
+                      <p>
+                        <%= 'Vol: ' + dataset1[i]['volume'] %>
+                      </p>
+                      <p>
+                        <%= dataset1[i]['created_at'].slice(11, -1) %>
+                      </p>
+                    </div>
+                  </div>
+                  <% } %>
 
 
-                        </div>
-                        <div class="chartPrices">
-                            <p><%= '$ ' + prices[0] %></p><p><%= '$ ' + prices[prices.length - 1] %></p>
-                        </div>
-                        <div class="chartPrices">
-                            <p><%= time[0].slice(11, -4) %></p><p><%= time[time.length - 1].slice(11, -4) %></p>
-                        </div>
-                    <% } %>
-            </div>
+              </div>
+              <div class="chartPrices">
+                <p>
+                  <%= '$ ' + prices[0] %>
+                </p>
+                <p>
+                  <%= '$ ' + prices[prices.length - 1] %>
+                </p>
+              </div>
+              <div class="chartPrices marginSmall">
+                <p>
+                  <%= time[0].slice(11, -4) %>
+                </p>
+                <p>
+                  <%= time[time.length - 1].slice(11, -4) %>
+                </p>
+              </div>
+              <div class="poweredBy">
+                <p>Powered: <a href="https://wazirx.com/" target="_blank">Wazirx</a>, raw api: <a
+                    href="https://api.wazirx.com/api/v2/trades?market=btcusdt">Wazirx</a></p>
+              </div>
+              <% } %>
+          </div>
         </div>
-    </main>
-  </body>
-</html>
+      </main>
+    </body>
+
+  </html>
+
+  <% %>
