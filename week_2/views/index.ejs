@@ -1,4 +1,8 @@
+<%# functies %>
+<%# Geeft data door op basis van key %>
+
 <%
+
   const getValues = (obj, key)=> {
     let array = []
     for(var i=obj.length-1; i>=0; i--) {
@@ -6,6 +10,12 @@
     }
     return array
   }
+
+%>
+
+<%# Geeft percentage van hoogte van blok %>
+
+<%
 
   const calcPercentage = (maxPrice, minPrice, roof, cutOff, multi) => {
     let priceCutOff = dataset1[i]['price'] - (minPrice * cutOff)
@@ -31,12 +41,10 @@
     <body>
       <main>
         <h1>Functional Programming week 2</h1>
-
-        <p>
-          <% if (typeof error=='string' && error) { %>
-            <%= error %>
-          <% } %>
-        </p>
+        
+        <% if (typeof error=='string' && error) { %>
+          <%= error %>
+        <% } %>
 
         <form>
           <label for="symbol">Symbol</label>
@@ -56,111 +64,62 @@
               <div class="coinCont">
                 <div><h4>Buy</h4><p><%= dataset2['data']['buy'] %></p></div>
                 <div><h4>Sell</h4><p><%= dataset2['data']['sell'] %></p></div>
-                <div>
-                  <h4>Change Rate</h4>
-                  <p><%= dataset2['data']['changeRate'] %></p>
-                </div>
-                <div>
-                  <h4>Change Price</h4>
-                  <p><%= dataset2['data']['changePrice'] %></p>
-                </div>
-                <div>
-                  <h4>High</h4>
-                  <p><%= dataset2['data']['high'] %></p>
-                </div>
-                <div>
-                  <h4>Low</h4>
-                  <p><%= dataset2['data']['low'] %></p>
-                </div>
-                <div>
-                  <h4>Vol</h4>
-                  <p><%= dataset2['data']['vol'] %></p>
-                </div>
-                <div>
-                  <h4>Vol Value</h4>
-                  <p><%= dataset2['data']['volValue'] %></p>
-                </div>
-                <div>
-                  <h4>Last</h4>
-                  <p><%= dataset2['data']['last'] %></p>
-                </div>
-                <div>
-                  <h4>Average Price</h4>
-                  <p><%= dataset2['data']['averagePrice'] %></p>
-                </div>
+                <div><h4>Change Rate</h4><p><%= dataset2['data']['changeRate'] %></p></div>
+                <div><h4>Change Price</h4><p><%= dataset2['data']['changePrice'] %></p></div>
+                <div><h4>High</h4><p><%= dataset2['data']['high'] %></p></div>
+                <div><h4>Low</h4><p><%= dataset2['data']['low'] %></p></div>
+                <div><h4>Vol</h4><p><%= dataset2['data']['vol'] %></p></div>
+                <div><h4>Vol Value</h4><p><%= dataset2['data']['volValue'] %></p></div>
+                <div><h4>Last</h4><p><%= dataset2['data']['last'] %></p></div>
+                <div><h4>Average Price</h4><p><%= dataset2['data']['averagePrice'] %></p></div>
               </div>
 
-              <% } %>
-
-                <div class="poweredBy">
-                  <p>Powered by: <a href="https://kucoin.com/" target="_blank">Kucoin</a>, raw api: <a
-                      href="https://api.kucoin.com/api/v1/market/stats?symbol=BTC-USDT">Kucoin</a></p>
-                </div>
+            <% } %>
+              <div class="poweredBy"><p>Powered by: <a href="https://kucoin.com/" target="_blank">Kucoin</a>, raw api: <a href="https://api.kucoin.com/api/v1/market/stats?symbol=BTC-USDT">Kucoin</a></p></div>
           </div>
 
           <div class="chartBarWrap">
-            <h2>Live chart: <% if (typeof symbol=='string' && symbol) { %>
-                <%= symbol %>
-                  <% } %>-<% if (typeof pair=='string' && pair) { %>
-                      <%= pair %>
-                        <% } %>
-            </h2>
+            <h2>Live chart: <% if (typeof symbol=='string' && symbol) { %><% } %>-<% if (typeof pair=='string' && pair) { %><%= pair %><% } %></h2>
             <% if (typeof dataset1=='object' && dataset1) { %>
 
               <div class="chartBarCont">
 
-                <% let prices=getValues(dataset1, 'price' )
+                <%
+                
+                let prices=getValues(dataset1, 'price' )
                 let time=getValues(dataset1, 'created_at' )
-                let maxPrice=Math.max(...prices) 
-                let minPrice=Math.min(...prices) 
+
+                let maxPrice=Math.max(...prices)
+                let minPrice=Math.min(...prices)
+
                 for(var i=dataset1.length-1; i>=0; i--) {
                   let pricePerc2 = calcPercentage(maxPrice, minPrice, 1.5, 0.99, 10)
+                  
                   %>
 
-                  <div class="chartBar"
-                    style="height: <%= pricePerc2 %>em; <% if ( dataset1[i]['price'] == maxPrice) {%><%= 'background: #00F346;' %><%}%> <% if ( dataset1[i]['price'] == minPrice) {%><%= 'background: #FF4242;' %><%}%> ">
+                  <div class="chartBar" style="height: 
+                  <%= pricePerc2 %>em; 
+                  <% if ( dataset1[i]['price'] == maxPrice) {%>
+                  <%= 'background: #00F346;' %><%}%>
+                  <% if ( dataset1[i]['price'] == minPrice) {%>
+                  <%= 'background: #FF4242;' %><%}%> ">
+
                     <div class="chartBarInfo">
-                      <p>
-                        <%= '$ ' + dataset1[i]['price'] %>
-                      </p>
-                      <p>
-                        <%= 'Vol: ' + dataset1[i]['volume'] %>
-                      </p>
-                      <p>
-                        <%= dataset1[i]['created_at'].slice(11, -1) %>
-                      </p>
+                      <p><%= '$ ' + dataset1[i]['price'] %></p>
+                      <p><%= 'Vol: ' + dataset1[i]['volume'] %></p>
+                      <p><%= dataset1[i]['created_at'].slice(11, -1) %></p>
                     </div>
                   </div>
-                  <% } %>
 
+                <% } %>
 
               </div>
-              <div class="chartPrices">
-                <p>
-                  <%= '$ ' + prices[0] %>
-                </p>
-                <p>
-                  <%= '$ ' + prices[prices.length - 1] %>
-                </p>
-              </div>
-              <div class="chartPrices marginSmall">
-                <p>
-                  <%= time[0].slice(11, -4) %>
-                </p>
-                <p>
-                  <%= time[time.length - 1].slice(11, -4) %>
-                </p>
-              </div>
-              <div class="poweredBy">
-                <p>Powered: <a href="https://wazirx.com/" target="_blank">Wazirx</a>, raw api: <a
-                    href="https://api.wazirx.com/api/v2/trades?market=btcusdt">Wazirx</a></p>
-              </div>
+              <div class="chartPrices"><p><%= '$ ' + prices[0] %></p><p><%= '$ ' + prices[prices.length - 1] %></p></div>
+              <div class="chartPrices marginSmall"><p><%= time[0].slice(11, -4) %></p><p><%= time[time.length - 1].slice(11, -4) %></p></div>
+              <div class="poweredBy"><p>Powered: <a href="https://wazirx.com/" target="_blank">Wazirx</a>, raw api: <a href="https://api.wazirx.com/api/v2/trades?market=btcusdt">Wazirx</a></p></div>
               <% } %>
           </div>
         </div>
       </main>
     </body>
-
   </html>
-
-  <% %>

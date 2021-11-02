@@ -8,6 +8,15 @@ body{
     margin: 2em;
 }
 
+form{
+    margin-top: 1em;
+    width: max-content;
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: 0.5em;
+    background: #f1f1f1;
+}
+
 .coinWrap{
     margin-top: 1em;
     width: max-content;
