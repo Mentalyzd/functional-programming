@@ -11,12 +11,14 @@
   </head>
   <body>
     <main>
-        <h1>Functional Programming</h1>
+        <h1>Functional Programming week 2</h1>
+
         <p>
             <% if (typeof error == 'string' && error) { %>
                 <%= error %>
             <% } %>
         </p>
+
         <form>
             <label for="symbol">Symbol</label>
             <input type="text" name="symbol" id="symbol" value="<% if (typeof symbol == 'string' && symbol) { %><%= symbol %><% } %>" required>
@@ -25,12 +27,69 @@
             <input type="submit">
         </form>
 
+        
         <div>
-            <% if (typeof dataset2 == 'object' && dataset2) { %>
-                <% for(var i=0; i<dataset1.length; i++) { %>
-                    <%= Object.values(dataset1[i]) %>
+            <div>
+
+                <% if (typeof dataset2 == 'object' && dataset2) { %>
+
+                    <%= Object.values(dataset2['data']) %>
+
+                    <%# for(var i=0; i<dataset2.length; i++) { %>
+                    <%# } %>
                 <% } %>
-            <% } %>
+
+            </div>
+            <h2>Live chart: <% if (typeof symbol == 'string' && symbol) { %><%= symbol %><% } %>-<% if (typeof pare == 'string' && pare) { %><%= pare %><% } %></h2>
+            <div class="chartBarWrap">
+                <% if (typeof dataset1 == 'object' && dataset1) { %>
+
+                        <div class="chartBarCont">
+
+                        <%
+                        
+                        let prices = []
+                        let time = []
+                        
+                        for(var i=dataset1.length-1; i>=0; i--) { 
+                            prices.push(dataset1[i]['price'])
+                            time.push(dataset1[i]['created_at'])
+                        } 
+                        
+                        let maxPrice = Math.max(...prices)
+                        let minPrice = Math.min(...prices)
+                        let maxPricePerc = maxPrice * 1.1
+                        let minPricePerc = minPrice * 0.996
+                        
+                        %>
+
+                        <%
+                        for(var i=dataset1.length-1; i>=0; i--) { 
+                            let priceCutOff = dataset1[i]['price'] - minPricePerc
+                            let pricePerc = priceCutOff / maxPricePerc * 100
+                        %>
+                            
+                            <div class="chartBar" style="height: <%= pricePerc * 10 %>em; <% if ( dataset1[i]['price'] == maxPrice) {%><%= 'background: #00F346;' %><%}%> <% if ( dataset1[i]['price'] == minPrice) {%><%= 'background: #FF4242;' %><%}%> ">
+
+                                <%# Object.values(dataset1[i])['price'] %>
+                                <div class="chartBarInfo">
+                                    <p><%= '$ ' + dataset1[i]['price'] %></p>
+                                    <p><%= 'Vol: ' + dataset1[i]['volume'] %></p>
+                                    <p><%= dataset1[i]['created_at'].slice(11, -1) %></p>
+                                </div>
+                            </div>
+                        <% } %>
+
+
+                        </div>
+                        <div class="chartPrices">
+                            <p><%= '$ ' + prices[0] %></p><p><%= '$ ' + prices[prices.length - 1] %></p>
+                        </div>
+                        <div class="chartPrices">
+                            <p><%= time[0].slice(11, -4) %></p><p><%= time[time.length - 1].slice(11, -4) %></p>
+                        </div>
+                    <% } %>
+            </div>
         </div>
     </main>
   </body>
