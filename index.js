@@ -5,7 +5,7 @@ let datasetWazirx = "https://api.wazirx.com/api/v2/trades?market="
 let datasetKucoin = "https://api.kucoin.com/api/v1/market/stats?symbol="
 
 const app = express()
-const port = 3000;
+const port = 80;
 
 app.use(express.static('public', {}))
 
