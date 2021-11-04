@@ -1,33 +1,17 @@
 # $CryptoChris: Get inform over your favorite cryptos
-Deze app is gemaakt als project voor Blok Tech. Hierbij was het de bedoeling om een dynamische webapp te maken met gebruik van Node.js, Express en MongoDB. Deze app is gemaakt voor mensen die opzoek zijn naar gym buddies. Dit kan zijn om mee te sporten of om meer ervaring op te doen.
-
-Deze webapp is alleen voor mobiel gebruik. Met de app kan je een eigen account aanmaken, inloggen, gebruikers liken en je profiel aanpassen.
+Voor het vak functional programming heb ik deze applicatie gemaakt. Hierbij was het de bedoeling om een api naar keuze uit te zoeken en de data je eigen te maken. Ik heb gekozen voor 2 crypto apis. Deze apis combineer ik in mijn app om zo een completere weergave te geven.
 
 Bekijk live app:
 https://fitbud-5te9b.ondigitalocean.app/
 
-Voorbeeld account login:
-<br>
-``
-email: test@test.com
-wachtwoord: test
-``
-<br>
-<br>
-Of maak een eigen account:
-<br>
-``
-https://fitbud-5te9b.ondigitalocean.app/registreer
-``
 <br>
 
 ![alt text](https://user-images.githubusercontent.com/32453774/140288773-838796a2-ecdc-4292-a5c8-adfa6d6e6995.png)
 
 ## Content
 1. [Install App](#install-app)
-2. [Install Database](#install-database)
-3. [Dependencies](#dependencies)
-4. [License](#license)
+2. [Dependencies](#dependencies)
+3. [License](#license)
 
 
 ## Install App
