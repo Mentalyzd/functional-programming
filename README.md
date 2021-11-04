@@ -1,4 +1,4 @@
-# $CryptoChris: Get informed on your favorite cryptos
+# 👩🏻‍💻 $CryptoChris: Get informed on your favorite cryptos
 Voor het vak functional programming heb ik deze applicatie gemaakt. Hierbij was het de bedoeling om een api naar keuze uit te zoeken en de data je eigen te maken. Ik heb gekozen voor twee crypto apis. Deze apis combineer ik in mijn app om zo een completere weergave te geven.
 
 Bekijk live app:
@@ -16,8 +16,8 @@ Bekijk live app:
 5. [License](#license)
 
 
-## Install App
-### Stap 1
+## ⚙️🚀 Install App
+### Stap 1️⃣
 Installeer git
 ```
 sudo apt update
@@ -30,7 +30,7 @@ Voorbeeld output: git version 2.17.1
 ```
 
 
-### Stap 2
+### Stap 2️⃣
 Clone de repo van github en ga naar de folder
 ```
 https://github.com/Mentalyzd/functional-programming.git
@@ -38,7 +38,7 @@ cd functional-programming
 ```
 
 
-### Stap 4
+### Stap 3️⃣
 Installeer npm
 ```
 npm install
@@ -50,7 +50,7 @@ Voorbeeld output: 7.5.3
 ```
 
 
-### Stap 4
+### Stap 4️⃣ 
 Run de applicatie
 ```
 npm start
@@ -60,7 +60,7 @@ Succesvolle output:
 App listening at http://localhost:3000
 ```
 
-### Note!
+### ❗️ Note ❗️
 Voor oudere versies ga naar oude folder
 ```
 cd /week_1_2
@@ -71,15 +71,15 @@ install npm
 npm start
 ```
 
-## Wiki
+## 📓 Wiki
 [Lees wiki](https://github.com/Mentalyzd/functional-programming/wiki)
 
-## Wishlist
+## 🔮 Wishlist
 1. Betere error handling
 2. Chart perfectioneren
 3. Websockets for chart updating
 
-## Dependencies
+## 📦 Dependencies
 In dit project heb ik de volgende **NPM** packages gebruikt: 
 * [ejs](https://www.npmjs.com/package/ejs)
 * [express](https://www.npmjs.com/package/express)
@@ -87,5 +87,5 @@ In dit project heb ik de volgende **NPM** packages gebruikt:
 * [request](https://www.npmjs.com/package/request)
 * **(Dev-dependency)** [nodemon](https://www.npmjs.com/package/nodemon)
 
-## License
+## 🔑 License
 [MIT](https://github.com/Mentalyzd/Fitbud/blob/main/LICENSE) © [Christiaan Zandbergen](https://github.com/Mentalyzd)
