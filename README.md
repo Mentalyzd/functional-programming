@@ -12,7 +12,8 @@ Bekijk live app:
 1. [Install App](#install-app)
 2. [Dependencies](#dependencies)
 3. [Wiki](#wiki)
-4. [License](#license)
+4. [Wishlist](# Wishlist)
+5. [License](#license)
 
 
 ## Install App
@@ -72,6 +73,11 @@ npm start
 
 ## Wiki
 [Lees wiki](https://github.com/Mentalyzd/functional-programming/wiki)
+
+## Wishlist
+1. Betere error handling
+2. Chart perfectioneren
+3. Websockets for chart updating
 
 ## Dependencies
 In dit project heb ik de volgende **NPM** packages gebruikt: 
