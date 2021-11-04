@@ -71,7 +71,7 @@ npm start
 ```
 
 ## Wiki
-[Read wiki here](https://github.com/Mentalyzd/functional-programming/wiki)
+[Lees wiki](https://github.com/Mentalyzd/functional-programming/wiki)
 
 ## Dependencies
 In dit project heb ik de volgende **NPM** packages gebruikt: 
