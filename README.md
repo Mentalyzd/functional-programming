@@ -16,7 +16,7 @@ Bekijk live app:
 6. [License](#-license)
 
 
-## ⚙️🚀 App installeren
+## ⚙️ App installeren
 ### Stap 1️⃣
 Installeer git
 ```
@@ -50,8 +50,8 @@ Voorbeeld output: 7.5.3
 ```
 
 
-### Stap 4️⃣ 
-Run de applicatie
+### Stap 4️⃣
+🚀 Run de applicatie
 ```
 npm start
 ```
