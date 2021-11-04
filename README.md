@@ -60,7 +60,7 @@ Succesvolle output:
 App listening at http://localhost:3000
 ```
 
-### ❗️ Note ❗️
+### Note ❗️
 Voor oudere versies ga naar oude folder
 ```
 cd /week_1_2
