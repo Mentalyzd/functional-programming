@@ -6,7 +6,7 @@ https://fitbud-5te9b.ondigitalocean.app/
 
 <br>
 
-![alt text](https://user-images.githubusercontent.com/32453774/140288773-838796a2-ecdc-4292-a5c8-adfa6d6e6995.png)
+![alt text](https://user-images.githubusercontent.com/32453774/140294453-caf1c433-5ff5-4660-8be9-67c032c6474a.png
 
 ## Content
 1. [Install App](#install-app)
