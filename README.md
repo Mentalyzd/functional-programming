@@ -12,7 +12,7 @@ Bekijk live app:
 1. [Install App](#install-app)
 2. [Dependencies](#dependencies)
 3. [Wiki](#wiki)
-4. [Wishlist](# Wishlist)
+4. [Wishlist](#Wishlist)
 5. [License](#license)
 
 
