@@ -5,10 +5,4 @@ Deze webapp is alleen voor mobiel gebruik. Met de app kan je een eigen account a
 
 Bekijk live app: https://fitbud-5te9b.ondigitalocean.app/
 
-Voorbeeld account login:
-email: test@test.com wachtwoord: test
-
-Of maak een eigen account:
-https://fitbud-5te9b.ondigitalocean.app/registreer
-
 ![alt text](https://user-images.githubusercontent.com/32453774/140288773-838796a2-ecdc-4292-a5c8-adfa6d6e6995.png)
