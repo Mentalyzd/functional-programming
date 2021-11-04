@@ -37,13 +37,6 @@ cd functional-programming
 ```
 
 
-### Stap 3
-Ga naar de folder van de laatste week
-```
-cd week_2
-```
-
-
 ### Stap 4
 Installeer npm
 ```
@@ -64,6 +57,17 @@ npm start
 Succesvolle output:
 ```
 App listening at http://localhost:3000
+```
+
+### Note!
+Voor oudere versies ga naar oude folder
+```
+cd /week_1_2
+```
+en run npm
+```
+install npm
+npm start
 ```
 
 ## Wiki
