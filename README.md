@@ -1,4 +1,4 @@
-# $CryptoChris: Get inform on your favorite cryptos
+# $CryptoChris: Get informed on your favorite cryptos
 Voor het vak functional programming heb ik deze applicatie gemaakt. Hierbij was het de bedoeling om een api naar keuze uit te zoeken en de data je eigen te maken. Ik heb gekozen voor 2 crypto apis. Deze apis combineer ik in mijn app om zo een completere weergave te geven.
 
 Bekijk live app:
@@ -71,6 +71,7 @@ In dit project heb ik de volgende **NPM** packages gebruikt:
 * [ejs](https://www.npmjs.com/package/ejs)
 * [express](https://www.npmjs.com/package/express)
 * [node](https://www.npmjs.com/package/node)
+* [request](https://www.npmjs.com/package/request)
 * **(Dev-dependency)** [nodemon](https://www.npmjs.com/package/nodemon)
 
 ## License
