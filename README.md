@@ -1,4 +1,4 @@
-# $CryptoChris: Get inform over your favorite cryptos
+# $CryptoChris: Get inform on your favorite cryptos
 Voor het vak functional programming heb ik deze applicatie gemaakt. Hierbij was het de bedoeling om een api naar keuze uit te zoeken en de data je eigen te maken. Ik heb gekozen voor 2 crypto apis. Deze apis combineer ik in mijn app om zo een completere weergave te geven.
 
 Bekijk live app:
