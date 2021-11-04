@@ -12,8 +12,8 @@ Bekijk live app:
 1. [App installeren](#%EF%B8%8F-app-installeren)
 3. [Wiki](#-wiki)
 4. [Wishlist](#-wishlist)
-5. [Dependencies](#dependencies)
-6. [License](#license)
+5. [Dependencies](#-dependencies)
+6. [License](#-license)
 
 
 ## ⚙️🚀 App installeren
