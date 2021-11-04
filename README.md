@@ -11,7 +11,8 @@ https://fitbud-5te9b.ondigitalocean.app/
 ## Content
 1. [Install App](#install-app)
 2. [Dependencies](#dependencies)
-3. [License](#license)
+3. [Wiki](#wiki)
+4. [License](#license)
 
 
 ## Install App
@@ -65,6 +66,8 @@ Succesvolle output:
 App listening at http://localhost:3000
 ```
 
+## Wiki
+[Read wiki here](https://github.com/Mentalyzd/functional-programming/wiki)
 
 ## Dependencies
 In dit project heb ik de volgende **NPM** packages gebruikt: 
