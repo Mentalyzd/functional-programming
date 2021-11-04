@@ -2,7 +2,7 @@
 Voor het vak functional programming heb ik deze applicatie gemaakt. Hierbij was het de bedoeling om een api naar keuze uit te zoeken en de data je eigen te maken. Ik heb gekozen voor twee crypto apis. Deze apis combineer ik in mijn app om zo een completere weergave te geven.
 
 Bekijk live app:
-https://fitbud-5te9b.ondigitalocean.app/
+https://functional-programming-uurvk.ondigitalocean.app/
 
 <br>
 
