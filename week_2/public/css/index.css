@@ -5,47 +5,150 @@ html, body{
 }
 
 body{
+    //margin: 2em;
+    background: #2c2c2c;
+    color: #f1f1f1
+}
+
+main{
     margin: 2em;
 }
 
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: #222;
+    box-sizing: border-box;
+    padding: 1em 2em;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+nav ul{
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    list-style: none;
+}
+
+nav h2{
+    margin: 0;
+}
+
+a{
+    color: #ccc;
+}
+
 form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
     margin-top: 1em;
     width: max-content;
     padding: 1em;
     box-sizing: border-box;
     border-radius: 0.5em;
-    background: #f1f1f1;
+    background: #333;
+}
+
+form input[type='text']{
+    border: none;
+    border-radius: 0.25em;
+    padding: 0.5em;
+    background: #242424;
+    box-shadow: inset 3px 3px 6px #1a1a1a,
+            inset -3px -3px 6px #2e2e2e;
+    color: #ccc;
+}
+
+form input[type='submit']{
+    border: none;
+    border-radius: 0.25em;
+    padding: 0.5em;
+    background: #242424;
+    background: linear-gradient(145deg, #272727, #202020);
+    box-shadow:  3px 3px 6px #1a1a1a,
+             -3px -3px 6px #2e2e2e;
+    color: #ccc;
+}
+
+.makeRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+}
+
+.divider{
+    border-top: 1px solid #444;
+    padding-top: 1em;
+}
+    
+.contentWrap{
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
 }
 
 .coinWrap{
-    margin-top: 1em;
-    width: max-content;
     padding: 1em;
     box-sizing: border-box;
     border-radius: 0.5em;
-    background: #f1f1f1;
+    background: #333;
+}
+
+.coinWrap a{
+    color: #ccc;
 }
 
 .coinCont{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
+    width: max-content;
     gap: 1em;
+    margin-bottom: 0.7em;
+}
+
+.coinCont div, .coinCont h4, .coinCont h3, .coinCont div p{
+    margin: 0;
+}
+
+.coinCont h4{
+    margin-top: 0.25em;
+}
+
+.coinCont div p{
+    font-size: 0.8em;
+    color: #999;
 }
 
 .chartBarWrap{
-    margin-top: 1em;
     width: max-content;
+    height: fit-content;
     padding: 1em;
     box-sizing: border-box;
     border-radius: 0.5em;
-    background: #f1f1f1;
+    background: #333;
 }
 
-.chartBarWrap h2{
-    margin: 0 0 4em 0;
-    padding: 0 0 0.5em 0;
-    border-bottom: 1px solid #ccc;
+.chartBarWrap a{
+    color: #ccc;
+}
+
+.chartBarWrap h3{
+    margin: 0 0 0.9em 0;
+}
+
+.boxShadow{
+    background: linear-gradient(225deg, #202020, #272727);
+    box-shadow:  -7px 7px 26px #1d1d1d,
+             7px -7px 26px #2b2b2b;
 }
 
 .chartBarCont{
@@ -54,9 +157,7 @@ form{
     flex-direction: row;
     gap: 2px;
     align-items: baseline;
-    padding-bottom: 1em;
     margin-bottom: 1em;
-    border-bottom: 1px solid #ccc;
 }
 
 .chartPrices{
@@ -72,12 +173,13 @@ form{
 
 .poweredBy{
     font-size: 0.7em;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #444;
     padding-top: 1em;
 }
 
 .poweredBy p{
     margin: 0;
+    color: #999;
 }
 
 .chartPrices p {
@@ -87,12 +189,12 @@ form{
 .chartBar{
     position: relative;
     width: 1em;
-    background: hsl(192, 100%, 50%);
-    transition: 0.3s ease;
+    background: #2c2c2c;
+    //transition: 0.3s ease;
 }
 
 .chartBar:hover {
-    background: hsl(192, 100%, 44%);
+    background: #ccc;
     transition: 0.3s ease;
 }
 
@@ -100,6 +202,7 @@ form{
     position: absolute;
     padding: 0.5em;
     background: #fff;
+    color: #333;
     width: max-content;
     border-radius: 0.25em;
     font-size: 0.70em;
@@ -129,8 +232,8 @@ form{
 }
 
 @keyframes chartInfo {
-    from {bottom: -0.5em;}
-    to {bottom: -1em;}
+    from {bottom: -1em;}
+    to {bottom: -1.5em;}
 }
 
 .chartBar p {
