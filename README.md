@@ -8,7 +8,7 @@ Bekijk live app:
 
 ![alt text](https://user-images.githubusercontent.com/32453774/140294453-caf1c433-5ff5-4660-8be9-67c032c6474a.png)
 
-## Content
+## 📃 Content
 1. [Install App](#install-app)
 2. [Dependencies](#dependencies)
 3. [Wiki](#wiki)
