@@ -47,12 +47,19 @@ Voorbeeld output: git version 2.17.1
 ### Stap 2
 Clone de repo van github en ga naar de folder
 ```
-git clone https://github.com/Mentalyzd/Fitbud.git
-cd Fitbud
+https://github.com/Mentalyzd/functional-programming.git
+cd functional-programming
 ```
 
 
 ### Stap 3
+Ga naar de folder van de laatste week
+```
+cd week_2
+```
+
+
+### Stap 4
 Installeer npm
 ```
 npm install
@@ -71,57 +78,9 @@ npm start
 ```
 Succesvolle output:
 ```
-App listening at http://localhost:2999
+App listening at http://localhost:3000
 ```
 
-## Install Database
-### Stap 1
-Maak account aan voor mongoDB
-```
-Ga naar: https://account.mongodb.com/account/register
-```
-1. Zodra je ingelogd bent maak je een nieuw project aan in MongoDB Atlas.
-2. Daarna maak je ook een nieuw cluster en een database aan met de naam naar keuze. **Onthoud de database naam goed!**
-3. MongoDB vraagt je om een username en een wachtwoord maken voor de database connectie. **Onthoud deze ook goed!**
-
-
-
-### Stap 2
-Maak in de root van de repo een bestand aan, genaamd .env
-```
-touch .env
-```
-
-Open het nieuwe betand in nano
-```
-nano .env
-```
-Hierin voeg je variable toe als gebruikersnaam, wachtwoord en database naam:
-```
-DB_USER=JOUW_DATABASE_GEBRUIKERSNAAM
-DB_PASS=JOUW_DATABASE_WACHTWOORD
-DB_NAME=JOUW_DATABASE_NAAM
-```
-Sla je bestand op, type:
-```
-CTRL + X
-```
-
-
-### Stap 3
-Stop de applicatie, type:
-```
-CTRL + C
-```
-Start de applicatie opnieuw
-```
-npm start
-```
-De database connectie is succesvol als het volgende in de terminal staat:
-```
-Database connection succesfull
-[]
-```
 
 ## Dependencies
 In dit project heb ik de volgende **NPM** packages gebruikt: 
