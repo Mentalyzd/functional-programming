@@ -26,9 +26,8 @@ https://fitbud-5te9b.ondigitalocean.app/registreer
 ## Content
 1. [Install App](#install-app)
 2. [Install Database](#install-database)
-3. [Oude repo](#oude-repo)
-4. [Dependencies](#dependencies)
-5. [License](#license)
+3. [Dependencies](#dependencies)
+4. [License](#license)
 
 
 ## Install App
@@ -124,20 +123,10 @@ Database connection succesfull
 []
 ```
 
-## Oude repo
-Door problemen met de oude repo, ben ik een nieuwe repo gestart. Voor alle oude commits bekijk:
-[Blok_Tech Repo](https://github.com/Mentalyzd/Blok_Tech)
-
 ## Dependencies
 In dit project heb ik de volgende **NPM** packages gebruikt: 
-* [bcrypt](https://www.npmjs.com/package/bcrypt)
-* [body-parser](https://www.npmjs.com/package/body-parser-json)
-* [dotenv](https://www.npmjs.com/package/dotenv)
 * [ejs](https://www.npmjs.com/package/ejs)
 * [express](https://www.npmjs.com/package/express)
-* [express-session](https://www.npmjs.com/package/express-session)
-* [mongoose](https://www.npmjs.com/package/mongoose)
-* [multer](https://www.npmjs.com/package/multer)
 * [node](https://www.npmjs.com/package/node)
 * **(Dev-dependency)** [nodemon](https://www.npmjs.com/package/nodemon)
 
